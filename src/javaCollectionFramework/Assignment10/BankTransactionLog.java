@@ -4,14 +4,27 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 class Transaction {
-    LocalDateTime time;
-    double amount;
-    String type;
+    private LocalDateTime time;
+    private double amount;
+    private String type;
 
     public Transaction(LocalDateTime time, double amount, String type) {
         this.time = time;
         this.amount = amount;
         this.type = type;
+    }
+
+    // Getters
+    public LocalDateTime getTime() {
+        return time;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public String getType() {
+        return type;
     }
 
     @Override
@@ -23,7 +36,6 @@ class Transaction {
 public class BankTransactionLog {
     private final Map<String, List<Transaction>> transactionsByAccount = new HashMap<>();
 
-    // Overloaded method to pass a custom timestamp
     public void addTransaction(String accountNumber, double amount, String type, LocalDateTime time) {
         Transaction t = new Transaction(time, amount, type);
         transactionsByAccount
@@ -38,8 +50,8 @@ public class BankTransactionLog {
             return;
         }
 
-        // Sort by time ascending
-        txList.sort(Comparator.comparing(t -> t.time));
+        // Sort by time ascending using getter
+        txList.sort(Comparator.comparing(Transaction::getTime));
 
         System.out.println("Statement for account: " + accountNumber);
         for (Transaction t : txList) {

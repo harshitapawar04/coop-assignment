@@ -1,12 +1,13 @@
 package javaCollectionFramework.Assignment5;
 import java.util.*;
 
+// Encapsulated Product class
 class Product {
-    int id;
-    String name;
-    double price;
-    double rating;
-    int stock;
+    private int id;
+    private String name;
+    private double price;
+    private double rating;
+    private int stock;
 
     public Product(int id, String name, double price, double rating, int stock) {
         this.id = id;
@@ -14,6 +15,26 @@ class Product {
         this.price = price;
         this.rating = rating;
         this.stock = stock;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public int getStock() {
+        return stock;
     }
 
     @Override
@@ -25,7 +46,6 @@ class Product {
                 ", Stock: " + stock;
     }
 }
-
 
 public class ProductCatalog5 {
     public static void main(String[] args) {
@@ -41,9 +61,9 @@ public class ProductCatalog5 {
         List<Product> sortedProducts = new ArrayList<>(productMap.values());
 
         sortedProducts.sort((p1, p2) -> {
-            int ratingCompare = Double.compare(p2.rating, p1.rating); // descending
+            int ratingCompare = Double.compare(p2.getRating(), p1.getRating()); // descending
             if (ratingCompare != 0) return ratingCompare;
-            return p1.name.compareToIgnoreCase(p2.name); // ascending by name
+            return p1.getName().compareToIgnoreCase(p2.getName()); // ascending by name
         });
 
         System.out.println("=== Product Catalog (Sorted by Rating ↓, Name ↑) ===");

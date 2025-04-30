@@ -2,16 +2,29 @@ package javaCollectionFramework.Assignment6;
 
 import java.util.*;
 
-// Book class
+// Encapsulated Book class
 class Book {
-    String title;
-    String author;
-    int year;
+    private String title;
+    private String author;
+    private int year;
 
-    Book(String title, String author, int year) {
+    public Book(String title, String author, int year) {
         this.title = title;
         this.author = author;
         this.year = year;
+    }
+
+    // Getters
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getYear() {
+        return year;
     }
 
     @Override
@@ -50,10 +63,7 @@ public class LibraryCatalog {
     }
 
     static void addBook(Map<String, Set<Book>> catalog, String genre, Book book) {
-        if (!catalog.containsKey(genre)) {
-            catalog.put(genre, new HashSet<>());
-        }
-        catalog.get(genre).add(book);
+        catalog.computeIfAbsent(genre, k -> new HashSet<>()).add(book);
     }
 
     static void printBooksInGenre(Map<String, Set<Book>> catalog, String genre) {
@@ -66,11 +76,7 @@ public class LibraryCatalog {
         }
 
         List<Book> sortedList = new ArrayList<>(books);
-        Collections.sort(sortedList, new Comparator<Book>() {
-            public int compare(Book b1, Book b2) {
-                return Integer.compare(b1.year, b2.year);
-            }
-        });
+        sortedList.sort(Comparator.comparingInt(Book::getYear));
 
         for (Book b : sortedList) {
             System.out.println(b);
