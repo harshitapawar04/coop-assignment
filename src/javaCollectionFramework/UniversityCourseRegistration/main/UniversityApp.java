@@ -27,9 +27,12 @@ public class UniversityApp {
         system.registerStudentToCourse("S102", "CSE101");
         system.registerStudentToCourse("S103", "CSE101");
 
+        System.out.println("Students in CSE101 before dropping a student:");
+        system.listStudentsInCourse("CSE101").forEach(System.out::println);
+        System.out.println();
         system.dropStudentFromCourse("S101", "CSE101");
 
-        System.out.println("Students in CSE101:");
+        System.out.println("Students in CSE101 after dropping the student:");
         system.listStudentsInCourse("CSE101").forEach(System.out::println);
     }
 }
