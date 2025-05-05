@@ -44,7 +44,7 @@ public class CollegeSubjectAllotment {
         allotment.allotSubjects("Charlie", Arrays.asList("Math", "Computer Science"));
 
         allotment.printAllAllotments();
-
+        System.out.println( "SUbjects of Charlie :" + allotment.getSubjectsByStudent("Charlie"));
         // Reverse lookup
         String subject = "Math";
         List<String> students = allotment.getStudentsBySubject(subject);

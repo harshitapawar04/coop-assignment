@@ -1,4 +1,4 @@
-package javaCollectionFramework.Asignment8;
+package javaCollectionFramework.Assignment8;
 import java.util.*;
 
 public class EmployeeHierarchySystem{
