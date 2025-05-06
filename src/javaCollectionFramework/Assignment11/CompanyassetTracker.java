@@ -1,3 +1,9 @@
+//Company Asset Tracker (Map<String, Set<Asset>>)
+//
+//        Store assets per department with unique Asset objects.
+//
+//        Detect duplicate asset IDs globally.
+
 package javaCollectionFramework.Assignment11;
 import java.util.*;
 
@@ -44,20 +50,7 @@ public class CompanyassetTracker {
     private final Set<String> globalAssetIds = new HashSet<>();
     private final Set<String> duplicateAssetIds = new HashSet<>();
 
-    // Getter methods for encapsulated fields (read-only)
-    public Map<String, Set<Asset>> getDepartmentAssets() {
-        return Collections.unmodifiableMap(departmentAssets);
-    }
-
-    public Set<String> getGlobalAssetIds() {
-        return Collections.unmodifiableSet(globalAssetIds);
-    }
-
-    public Set<String> getDuplicateAssetIds() {
-        return Collections.unmodifiableSet(duplicateAssetIds);
-    }
-
-    // Business logic
+  // Business logic
     public void addAsset(String department, Asset asset) {
         if (!globalAssetIds.add(asset.getId())) {
             duplicateAssetIds.add(asset.getId());

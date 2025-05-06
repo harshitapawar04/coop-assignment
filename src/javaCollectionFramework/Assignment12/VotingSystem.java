@@ -1,3 +1,11 @@
+//Voting System (Map<String, Integer>)
+//
+//        Build a voting system that:
+//
+//        Tallies votes per candidate
+//
+//        Sorts by vote count descending
+
 package javaCollectionFramework.Assignment12;
 import java.util.*;
 
