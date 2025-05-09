@@ -1,0 +1,20 @@
+INFO Server started at 10:00AM
+WARNING Disk space low
+ERROR Failed to connect to database
+INFO User login successful
+ERROR Timeout occurred
+INFO Scheduled backup started
+INFO Scheduled backup completed successfully
+WARNING High memory usage detected
+ERROR File not found: config.yaml
+INFO Connection established with client 192.168.1.10
+WARNING CPU temperature exceeds threshold
+INFO User 'admin' logged out
+ERROR Unable to write to log file
+INFO System check passed
+WARNING SSL certificate will expire soon
+ERROR Null pointer exception at line 42
+INFO Server shutdown initiated
+INFO New session started for user 'jane.doe'
+ERROR Unauthorized access attempt detected
+WARNING Deprecated API usage in module 'payment'
