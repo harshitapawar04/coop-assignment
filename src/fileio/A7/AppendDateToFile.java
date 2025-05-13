@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class AppendDateToFile {
     public static void main(String[] args) {
-        String filename = "src/Files/input.txt";
+        String filename = "src/Files/log.txt";
 
         // Get the current date and format it
         String currentDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());

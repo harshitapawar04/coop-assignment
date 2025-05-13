@@ -4,7 +4,7 @@ import java.io.*;
 
 public class CsvToUpperCase {
     public static void main(String[] args) {
-        String filename = "/srcFiles/employee.csv";
+        String filename = "src/Files/employee.csv";
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
             String line;

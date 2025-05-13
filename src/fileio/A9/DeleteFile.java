@@ -4,7 +4,7 @@ import java.io.File;
 
 public class DeleteFile {
     public static void main(String[] args) {
-        String filename = "src/File/oldfile.txt";
+        String filename = "src/Files/oldfile.txt";
         File file = new File(filename);
 
         if (file.exists()) {

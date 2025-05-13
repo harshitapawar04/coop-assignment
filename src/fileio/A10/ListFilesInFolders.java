@@ -5,7 +5,7 @@ import java.io.File;
 public class ListFilesInFolders {
     public static void main(String[] args) {
 
-        String folderName = "fileio";
+        String folderName = "src/fileio/document";
         File folder = new File(folderName);
 
         if (folder.exists() && folder.isDirectory()) {

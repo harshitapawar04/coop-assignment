@@ -1,0 +1,30 @@
+
+double originalFromBalance = fromAccount.getBalance();
+
+        try {
+            // Step 1: Debit from source
+            fromAccount.debit(amount);
+
+            // Step 2: Validate destination account
+            if (toAccount == null) {
+                throw new IllegalArgumentException("Target account does not exist");
+            }
+
+            // Step 3: Credit to destination
+            toAccount.credit(amount);
+
+            System.out.println("Transfer successful!");
+
+        } catch (Exception e) {
+            // Rollback to original balance
+            fromAccount.credit(amount);
+            throw e;  // Re-throw to caller
+        }
+    }
+
+    public static void printBalances() {
+        for (Account acc : accounts.values()) {
+            System.out.println(acc.getAccountId() + " Balance: " + acc.getBalance());
+        }
+    }
+}
