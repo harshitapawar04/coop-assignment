@@ -17,7 +17,6 @@ class Wordcounter{
 
         Set<String> sortedWords = new TreeSet<>(wordCount.keySet());
 
-
         System.out.println("Number of unique words: " + wordCount.size());
         System.out.println("Word Frequencies in sorted order:");
 
@@ -25,6 +24,4 @@ class Wordcounter{
             System.out.println(word + ": " + wordCount.get(word));
         }
     }
-
-
 }
